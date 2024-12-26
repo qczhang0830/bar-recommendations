@@ -206,11 +206,9 @@ export default function Analytics() {
   const handleDateChange = (type: 'start' | 'end', date: string) => {
     setDateRange(prev => {
       const newDate = new Date(date);
-      // 如果是结束日期，设置为当天的最后一毫秒
       if (type === 'end') {
         newDate.setHours(23, 59, 59, 999);
       } else {
-        // 如果是开始日期，设置为当天的开始
         newDate.setHours(0, 0, 0, 0);
       }
       return {

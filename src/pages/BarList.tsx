@@ -11,7 +11,6 @@ export default function BarList() {
     recordPageView();
     const startTime = Date.now();
 
-    // 组件卸载时记录停留时间
     return () => {
       const duration = (Date.now() - startTime) / 1000;
       stats.pageStayTimes.push({ 
@@ -19,7 +18,8 @@ export default function BarList() {
         value: duration 
       });
     };
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6">
