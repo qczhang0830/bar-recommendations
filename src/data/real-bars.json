@@ -1,0 +1,284 @@
+{
+  "bars": [
+    {
+      "id": "bar1",
+      "name": "OPUS lounge",
+      "image": "/images/bars/opus-lounge.png",
+      "area": "南京东路",
+      "type": "清吧",
+      "tags": ["网红打卡", "人气酒吧"],
+      "recommendations": [
+        {
+          "id": "opus-1",
+          "content": "调酒选择丰富，既有酒精也有无酒精饮品，适合各种口味，尤其是热带水果风味的招牌饮品，酸甜可口，回味无穷。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=1",
+          "likes": 156
+        },
+        {
+          "id": "opus-2",
+          "content": "露台布置得非常漂亮，特别是阳台两侧的玫瑰花卡座，非常适合拍照打卡，让人的心情大好。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=2",
+          "likes": 89
+        },
+        {
+          "id": "opus-3",
+          "content": "上下楼都有人指引，态度很好，笑容可掬，饮品上得特别快，整体服务令人满意。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=3",
+          "likes": 234
+        }
+      ]
+    },
+    {
+      "id": "bar2",
+      "name": "外滩8号 whisky bar",
+      "image": "/images/bars/bund8-bar.png",
+      "area": "外滩",
+      "type": "威士忌吧",
+      "tags": ["外滩夜景", "2023人气酒吧", "露台"],
+      "recommendations": [
+        {
+          "id": "bund-1",
+          "content": "跨年时人山人海，露台挤不进去，选择在室内享受跨年，依旧可以俯瞰外滩美景，ktv娱乐到深夜，氛围绝佳。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=4",
+          "likes": 178
+        },
+        {
+          "id": "bund-2",
+          "content": "位于中山路外滩8号金延大厦七楼，露台视野极佳，正对浦江三件套和万国建筑，随手一拍都是大片，夜晚灯火璀璨，氛围浪漫。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=5",
+          "likes": 145
+        },
+        {
+          "id": "bund-3",
+          "content": "无需预约且没有低消，服务态度好，让顾客在享受美景的同时也能感受到温馨的服务。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=6",
+          "likes": 201
+        }
+      ]
+    },
+    {
+      "id": "bar3",
+      "name": "MiM Shanghai",
+      "image": "/images/bars/mim-shanghai.png",
+      "area": "淮海中路",
+      "type": "鸡尾酒吧",
+      "tags": ["创意调酒", "露台", "约会圣地"],
+      "recommendations": [
+        {
+          "id": "mim-1",
+          "content": "夜晚的户外露台氛围感十足，鸡尾酒精致美味，适合与朋友聚会聊天，体验极佳。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=7",
+          "likes": 167
+        },
+        {
+          "id": "mim-2",
+          "content": "露台设计浪漫，满眼绿色，拍照出片效果极佳，非常适合打卡拍照。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=8",
+          "likes": 132
+        },
+        {
+          "id": "mim-3",
+          "content": "服务员耐心介绍水烟种类，提供专业指导，让客人体验更加舒适愉快。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=9",
+          "likes": 198
+        }
+      ]
+    },
+    {
+      "id": "bar4",
+      "name": "Insomnia",
+      "image": "/images/bars/insomnia.png",
+      "area": "静安寺",
+      "type": "清吧",
+      "tags": ["深夜营业", "创意调酒", "小食"],
+      "recommendations": [
+        {
+          "id": "Insomnia-1",
+          "content": "环形吧台氛围感十足，小行星形状的吧台和星球状的桌子营造出奇妙的氛围，适合朋友小聚。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=10",
+          "likes": 145
+        },
+        {
+          "id": "Insomnia-2",
+          "content": "调酒师用心调配每一份配料，每一杯酒都诉说着独特的故事，让你在下班后享受一段独特时光。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=11",
+          "likes": 167
+        },
+        {
+          "id": "Insomnia-3",
+          "content": "吧内小吃不多，但脆角等小食很好吃，搭配特调酒，让整个体验更加完美。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=12",
+          "likes": 189
+        }
+      ]
+    },
+    {
+      "id": "bar5",
+      "name": "LAGOM Cafe·Bar",
+      "image": "/images/bars/lagom.png",
+      "area": "静安寺",
+      "type": "咖啡酒吧",
+      "tags": ["露台", "包厢", "电影放映"],
+      "recommendations": [
+        {
+          "id": "LAGOM-1",
+          "content": "顶层露台吹着徐徐晚风，与好友畅聊，烦恼烟消云散，是放松的绝佳选择。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=13",
+          "likes": 234
+        },
+        {
+          "id": "LAGOM-2",
+          "content": "静安寺附近的商务楼顶层，室内凉爽舒适，大屏幕播放电影，露台帐篷位置私密，适合社交放松。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=14",
+          "likes": 198
+        },
+        {
+          "id": "LAGOM-3",
+          "content": "露台星空包房，喝酒放松好去处，投影看电影超赞。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=15",
+          "likes": 167
+        }
+      ]
+    },
+    {
+      "id": "bar6",
+      "name": "桃花屋小酒馆",
+      "image": "/images/bars/taohuawu.png",
+      "area": "徐家汇",
+      "type": "清吧",
+      "tags": ["驻唱歌手", "日式风格", "深夜食堂"],
+      "recommendations": [
+        {
+          "id": "thw-1",
+          "content": "店内有驻唱表演，每半小时一场，周杰伦的歌曲更是点睛之笔，氛围轻松愉快，非常适合闺蜜聚会聊天。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=16",
+          "likes": 187
+        },
+        {
+          "id": "thw-2",
+          "content": "特色小吃和饮品种类丰富，如青玉案和莫吉托，炸物外皮稍显厚重，但总体来说美味可口。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=17",
+          "likes": 221
+        },
+        {
+          "id": "thw-3",
+          "content": "馆内仿佛自带与世隔绝的仙气，披萨很特别，适合小聚，还能包场团建，推荐。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=18",
+          "likes": 156
+        }
+      ]
+    },
+    {
+      "id": "bar7",
+      "name": "KAISHA會社",
+      "image": "/images/bars/kaisha.png",
+      "area": "陆家嘴",
+      "type": "清吧",
+      "tags": ["日式风格", "创意调酒", "小食"],
+      "recommendations": [
+        {
+          "id": "kaisha-1",
+          "content": "推出多种鸡尾酒冰沙，如杨梅冰沙、话梅冰沙等，酸甜爽口，适合朋友聚会和约会。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=19",
+          "likes": 198
+        },
+        {
+          "id": "kaisha-2",
+          "content": "外间更偏美式风格，里间更偏日式，安静私密，适合朋友聚会和情侣约会。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=20",
+          "likes": 167
+        },
+        {
+          "id": "kaisha-3",
+          "content": "黑松露薯条、巴斯克芝士和川味关东煮等美食口感细腻，特别适合不喝酒的朋友。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=21",
+          "likes": 145
+        }
+      ]
+    },
+    {
+      "id": "bar8",
+      "name": "Lieben",
+      "image": "/images/bars/lieben.png",
+      "area": "南京西路",
+      "type": "鸡尾酒吧",
+      "tags": ["创意调酒", "DIY体验", "约会圣地"],
+      "recommendations": [
+        {
+          "id": "Lieben-1",
+          "content": "特色鸡尾酒选自8把钥匙，每款酒都有独特风味，如液体爆米花、糯香普洱，令人难忘。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=22",
+          "likes": 243
+        },
+        {
+          "id": "Lieben-2",
+          "content": "调酒师年轻大方，提供独特体验，如糖浆品鉴，让顾客亲手制作掐丝珐琅小夜灯，趣味十足。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=23",
+          "likes": 178
+        },
+        {
+          "id": "Lieben-3",
+          "content": "环境舒适隐蔽，阳台单桌卡座暗淡温馨，适合小聚。吧台位坐感极佳，调酒师帅气会聊天。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=24",
+          "likes": 198
+        }
+      ]
+    },
+    {
+      "id": "bar9",
+      "name": "REVEL",
+      "image": "/images/bars/revel.png",
+      "area": "淮海中路",
+      "type": "清吧",
+      "tags": ["创意调酒", "网红打卡", "深夜营业"],
+      "recommendations": [
+        {
+          "id": "REVEL-1",
+          "content": "店内环境chill，坐在淮海路上，疲惫瞬间消失，非常适合放松和拍照打卡。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=25",
+          "likes": 212
+        },
+        {
+          "id": "REVEL-2",
+          "content": "调酒师根据喜好调制多款清爽好入口的鸡尾酒，每款都充满惊喜，让人如同开盲盒一般期待。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=26",
+          "likes": 189
+        },
+        {
+          "id": "REVEL-3",
+          "content": "服务态度好，调酒师专业，顾客点餐时耐心解答，让整个体验更加愉悦。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=27",
+          "likes": 167
+        }
+      ]
+    },
+    {
+      "id": "bar10",
+      "name": "DreamSicle",
+      "image": "/images/bars/dreamsicle.png",
+      "area": "徐家汇",
+      "type": "鸡尾酒吧",
+      "tags": ["创意调酒", "2023人气酒吧", "小食"],
+      "recommendations": [
+        {
+          "id": "DreamSicle-1",
+          "content": "调酒冠军坐镇，特调鸡尾酒风味独特，甚至可以像生啤一样直接打出龙头鸡尾酒，让调酒体验充满惊喜。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=28",
+          "likes": 267
+        },
+        {
+          "id": "DreamSicle-2",
+          "content": "店内氛围轻松惬意，音乐品味高雅，适合与朋友聚会聊天，夜晚在这里小酌一杯，十分惬意。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=29",
+          "likes": 198
+        },
+        {
+          "id": "DreamSicle-3",
+          "content": "啤酒价格实惠，小吃也很棒。",
+          "avatar": "https://api.dicebear.com/7.x/avataaars/svg?seed=30",
+          "likes": 223
+        }
+      ]
+    }
+  ]
+}
