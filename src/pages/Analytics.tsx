@@ -201,6 +201,24 @@ export default function Analytics() {
       .reduce((sum, record) => sum + record.value, 0);
   };
 
+  // 修改日期筛选的处理
+  const handleDateChange = (type: 'start' | 'end', date: string) => {
+    setDateRange(prev => {
+      const newDate = new Date(date);
+      // 如果是结束日期，设置为当天的最后一毫秒
+      if (type === 'end') {
+        newDate.setHours(23, 59, 59, 999);
+      } else {
+        // 如果是开始日期，设置为当天的开始
+        newDate.setHours(0, 0, 0, 0);
+      }
+      return {
+        ...prev,
+        [type]: newDate
+      };
+    });
+  };
+
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6">
       {/* 顶部标题区 */}
@@ -225,20 +243,14 @@ export default function Analytics() {
         <input
           type="date"
           value={dateRange.start.toISOString().split('T')[0]}
-          onChange={(e) => setDateRange(prev => ({
-            ...prev,
-            start: new Date(e.target.value)
-          }))}
+          onChange={(e) => handleDateChange('start', e.target.value)}
           className="border rounded px-2 py-1"
         />
         <span>至</span>
         <input
           type="date"
           value={dateRange.end.toISOString().split('T')[0]}
-          onChange={(e) => setDateRange(prev => ({
-            ...prev,
-            end: new Date(e.target.value)
-          }))}
+          onChange={(e) => handleDateChange('end', e.target.value)}
           className="border rounded px-2 py-1"
         />
       </div>

@@ -5,9 +5,10 @@ import { useStats } from '../contexts/StatsContext';
 
 interface Props {
   bar: Bar;
+  onView?: () => void;
 }
 
-export default function BarCard({ bar }: Props) {
+export default function BarCard({ bar, onView }: Props) {
   const { incrementCardView, incrementRecommendationView, toggleRecommendationLike, stats } = useStats();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [helpfulClicks, setHelpfulClicks] = useState<{ [key: string]: boolean }>({});
@@ -31,6 +32,7 @@ export default function BarCard({ bar }: Props) {
   }, [currentIndex, bar.recommendations, incrementRecommendationView]);
 
   const handleCardClick = () => {
+    onView?.();
     incrementCardView(bar.id);
     setShowModal(true);
   };

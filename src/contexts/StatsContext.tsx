@@ -7,6 +7,7 @@ interface StatsContextType {
   incrementRecommendationView: (recommendationId: string) => void;
   toggleRecommendationLike: (recommendationId: string) => void;
   recordModalStayTime: (barId: string, duration: number) => void;
+  recordPageView: () => void;
   resetStats: () => void;
 }
 
@@ -126,6 +127,16 @@ export function StatsProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  const recordPageView = useCallback(() => {
+    setStats(prev => ({
+      ...prev,
+      pageViews: [
+        ...prev.pageViews,
+        { timestamp: Date.now(), value: 1 }
+      ]
+    }));
+  }, []);
+
   const resetStats = useCallback(() => {
     setStats({
       pageViews: [],
@@ -157,8 +168,9 @@ export function StatsProvider({ children }: { children: ReactNode }) {
     incrementRecommendationView,
     toggleRecommendationLike,
     recordModalStayTime,
+    recordPageView,
     resetStats
-  }), [stats, incrementCardView, incrementRecommendationView, toggleRecommendationLike, recordModalStayTime, resetStats]);
+  }), [stats, incrementCardView, incrementRecommendationView, toggleRecommendationLike, recordModalStayTime, recordPageView, resetStats]);
 
   return (
     <StatsContext.Provider value={value}>
