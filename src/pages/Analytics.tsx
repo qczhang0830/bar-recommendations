@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useStats } from '../contexts/StatsContext';
 import { AnalyticsData } from '../types';
 import { allBars } from '../data/bars';
+import { Link } from 'react-router-dom';
 
 type ViewMode = 'bars' | 'recommendations';
 type SortField = 'views' | 'likes' | 'averageStayTime' | 'likeRate';
@@ -229,13 +230,20 @@ export default function Analytics() {
             查看用户浏览和互动数据
           </p>
         </div>
-        {/* 添加重置按钮 */}
-        <button
-          onClick={handleReset}
-          className="px-4 py-2 bg-red-50 text-red-600 rounded-lg text-sm hover:bg-red-100 transition-colors"
-        >
-          重置数据
-        </button>
+        <div className="flex space-x-4">
+          <Link
+            to="/"
+            className="px-4 py-2 bg-gray-50 text-gray-600 rounded-lg text-sm hover:bg-gray-100 transition-colors"
+          >
+            返回列表
+          </Link>
+          <button
+            onClick={handleReset}
+            className="px-4 py-2 bg-red-50 text-red-600 rounded-lg text-sm hover:bg-red-100 transition-colors"
+          >
+            重置数据
+          </button>
+        </div>
       </div>
 
       {/* 日期筛选 */}
