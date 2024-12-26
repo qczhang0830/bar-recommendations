@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useStats } from '../contexts/StatsContext';
 import { AnalyticsData } from '../types';
 import { allBars } from '../data/bars';
@@ -16,19 +16,10 @@ export default function Analytics() {
   const { stats, resetStats } = useStats();
   const [viewMode, setViewMode] = useState<ViewMode>('recommendations');
   const [sortConfig, setSortConfig] = useState<SortConfig>({ field: 'views', order: 'desc' });
-  const [selectedBar, setSelectedBar] = useState<string>('all');
   const [dateRange, setDateRange] = useState({
     start: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
     end: new Date()
   });
-
-  // 过滤指定时间范围的数据
-  const filterByDate = (records: InteractionRecord[]) => {
-    return records.filter(record => 
-      record.timestamp >= dateRange.start.getTime() && 
-      record.timestamp <= dateRange.end.getTime()
-    );
-  };
 
   // 计算时间范围内的统计数据
   const getStatsInRange = () => {
@@ -75,16 +66,11 @@ export default function Analytics() {
 
   const { totalPageViews, averagePageStayTime, totalLikes, uniqueCardViewsPerVisit } = getStatsInRange();
 
-  useEffect(() => {
-    console.log('Current stats:', {
-      modalStayTimes: stats.modalStayTimes,
-      totalViews: stats.totalCardViews,
-      cardViews: stats.cardViews
-    });
-  }, [stats]);
-
   const analyticsData: AnalyticsData = {
-    ...getStatsInRange(),
+    totalPageViews,
+    averagePageStayTime,
+    totalLikes,
+    uniqueCardViewsPerVisit,
     barStats: allBars.map(bar => {
       // 酒吧卡片查看数
       const cardViews = Array.isArray(stats.cardViews[bar.id])
@@ -149,13 +135,15 @@ export default function Analytics() {
 
   // 筛选推荐语数据
   const filteredRecommendations = analyticsData.barStats
-    .flatMap(bar => bar.recommendationStats)
-    .filter(rec => selectedBar === 'all' || rec.barId === selectedBar);
+    .flatMap(bar => bar.recommendationStats);
 
   // 排序函数
-  const sortData = (data: any[], field: SortField) => {
+  const sortData = <T extends { views: number, likes: number, averageStayTime?: number }>(
+    data: T[],
+    field: SortField
+  ) => {
     return [...data].sort((a, b) => {
-      let aValue, bValue;
+      let aValue: number, bValue: number;
       
       switch (field) {
         case 'views':
@@ -171,13 +159,12 @@ export default function Analytics() {
           bValue = b.averageStayTime || 0;
           break;
         case 'likeRate':
-          // 计算点赞率（点赞数/浏览量）
           aValue = a.views > 0 ? (a.likes / a.views) : 0;
           bValue = b.views > 0 ? (b.likes / b.views) : 0;
           break;
         default:
-          aValue = a[field];
-          bValue = b[field];
+          aValue = 0;
+          bValue = 0;
       }
 
       return sortConfig.order === 'desc' ? bValue - aValue : aValue - bValue;

@@ -1,16 +1,6 @@
 import { createContext, useContext, useState, ReactNode, useCallback, useMemo, useEffect } from 'react';
 import { InteractionStats } from '../types';
 
-interface InteractionStats {
-  pageViews: InteractionRecord[];  // 新增：页面浏览记录
-  pageStayTimes: InteractionRecord[];  // 新增：页面停留时间
-  cardViews: { [key: string]: InteractionRecord[] };
-  recommendationViews: { [key: string]: InteractionRecord[] };
-  recommendationLikes: { [key: string]: InteractionRecord[] };
-  modalStayTimes: { [key: string]: InteractionRecord[] };
-  uniqueCardViews: Set<string>;
-}
-
 interface StatsContextType {
   stats: InteractionStats;
   incrementCardView: (barId: string) => void;
@@ -22,6 +12,16 @@ interface StatsContextType {
 
 const StatsContext = createContext<StatsContextType | null>(null);
 
+const initialStats: InteractionStats = {
+  pageViews: [],
+  pageStayTimes: [],
+  cardViews: {},
+  recommendationViews: {},
+  recommendationLikes: {},
+  modalStayTimes: {},
+  uniqueCardViews: new Set()
+};
+
 export function StatsProvider({ children }: { children: ReactNode }) {
   const [stats, setStats] = useState<InteractionStats>(() => {
     try {
@@ -29,35 +29,33 @@ export function StatsProvider({ children }: { children: ReactNode }) {
       if (savedStats) {
         const parsed = JSON.parse(savedStats);
         return {
+          pageViews: parsed.pageViews || [],
+          pageStayTimes: parsed.pageStayTimes || [],
           cardViews: parsed.cardViews || {},
           recommendationViews: parsed.recommendationViews || {},
           recommendationLikes: parsed.recommendationLikes || {},
           modalStayTimes: parsed.modalStayTimes || {},
-          totalCardViews: parsed.totalCardViews || 0,
           uniqueCardViews: new Set(parsed.uniqueCardViews || [])
         };
       }
     } catch (error) {
       console.error('Error loading stats:', error);
     }
-    return {
-      cardViews: {},
-      recommendationViews: {},
-      recommendationLikes: {},
-      modalStayTimes: {},
-      totalCardViews: 0,
-      uniqueCardViews: new Set()
-    };
+    return initialStats;
   });
 
   useEffect(() => {
     try {
       const statsForStorage = {
-        ...stats,
+        pageViews: stats.pageViews,
+        pageStayTimes: stats.pageStayTimes,
+        cardViews: stats.cardViews,
+        recommendationViews: stats.recommendationViews,
+        recommendationLikes: stats.recommendationLikes,
+        modalStayTimes: stats.modalStayTimes,
         uniqueCardViews: Array.from(stats.uniqueCardViews)
       };
       localStorage.setItem('analyticsStats', JSON.stringify(statsForStorage));
-      console.log('Stats updated:', stats);
     } catch (error) {
       console.error('Error saving stats:', error);
     }
@@ -72,7 +70,6 @@ export function StatsProvider({ children }: { children: ReactNode }) {
           ? [...prev.cardViews[barId], { timestamp: Date.now(), value: 1 }]
           : [{ timestamp: Date.now(), value: 1 }]
       },
-      totalCardViews: prev.totalCardViews + 1,
       uniqueCardViews: new Set([...prev.uniqueCardViews, barId])
     }));
   }, []);
@@ -130,16 +127,15 @@ export function StatsProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const resetStats = useCallback(() => {
-    const emptyStats: InteractionStats = {
+    setStats({
+      pageViews: [],
+      pageStayTimes: [],
       cardViews: {},
       recommendationViews: {},
       recommendationLikes: {},
       modalStayTimes: {},
-      totalCardViews: 0,
       uniqueCardViews: new Set()
-    };
-
-    setStats(emptyStats);
+    });
 
     localStorage.removeItem('analyticsStats');
 
