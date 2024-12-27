@@ -34,7 +34,7 @@
       "image": "/images/bars/bund8-bar.png",
       "area": "外滩",
       "type": "威士忌吧",
-      "tags": ["外滩夜景", "2023人气酒吧", "露台"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "bund-1",
@@ -62,7 +62,7 @@
       "image": "/images/bars/mim-shanghai.png",
       "area": "淮海中路",
       "type": "鸡尾酒吧",
-      "tags": ["创意调酒", "露台", "约会圣地"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "mim-1",
@@ -90,7 +90,7 @@
       "image": "/images/bars/insomnia.png",
       "area": "静安寺",
       "type": "清吧",
-      "tags": ["深夜营业", "创意调酒", "小食"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "Insomnia-1",
@@ -118,7 +118,7 @@
       "image": "/images/bars/lagom.png",
       "area": "静安寺",
       "type": "咖啡酒吧",
-      "tags": ["露台", "包厢", "电影放映"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "LAGOM-1",
@@ -146,7 +146,7 @@
       "image": "/images/bars/taohuawu.png",
       "area": "徐家汇",
       "type": "清吧",
-      "tags": ["驻唱歌手", "日式风格", "深夜食堂"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "thw-1",
@@ -174,7 +174,7 @@
       "image": "/images/bars/kaisha.png",
       "area": "陆家嘴",
       "type": "清吧",
-      "tags": ["日式风格", "创意调酒", "小食"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "kaisha-1",
@@ -202,7 +202,7 @@
       "image": "/images/bars/lieben.png",
       "area": "南京西路",
       "type": "鸡尾酒吧",
-      "tags": ["创意调酒", "DIY体验", "约会圣地"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "Lieben-1",
@@ -230,7 +230,7 @@
       "image": "/images/bars/revel.png",
       "area": "淮海中路",
       "type": "清吧",
-      "tags": ["创意调酒", "网红打卡", "深夜营业"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "REVEL-1",
@@ -258,7 +258,7 @@
       "image": "/images/bars/dreamsicle.png",
       "area": "徐家汇",
       "type": "鸡尾酒吧",
-      "tags": ["创意调酒", "2023人气酒吧", "小食"],
+      "tags": ["网红打卡", "人气酒吧"],
       "recommendations": [
         {
           "id": "DreamSicle-1",
